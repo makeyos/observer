@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Makey_Completeobserver>
+            <version>0.0.1</version>
+        </Makey_Completeobserver>
+    </modules>
+    <global>
+        <models>
+            <makeycompleteobserver>
+                <class>Completeobserver_Model</class>
+            </makeycompleteobserver>
+        </models>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <makey_completeobserver_model_observer>
+                        <type>singleton</type>
+                        <class>Makey_Completeobserver_Model_Observer</class>
+                        <method>sendApi</method>
+                    </makey_completeobserver_model_observer>
+                </observers>
+            </sales_order_save_after>
+        </events>
+    </global>
+</config>
